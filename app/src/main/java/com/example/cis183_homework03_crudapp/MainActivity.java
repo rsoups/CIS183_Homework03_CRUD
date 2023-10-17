@@ -8,10 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btn_j_addEmployee;
     ListView lv_j_listOfEmployees;
+    ArrayList<Employee> employeeList;
+    EmployeeAdapter adapter;
+    Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +26,14 @@ public class MainActivity extends AppCompatActivity {
         btn_j_addEmployee = findViewById(R.id.btn_v_addEmployee);
         lv_j_listOfEmployees = findViewById(R.id.lv_v_listOfEmployees);
 
+        employeeList = new ArrayList<Employee>();
+
+        db = new Database(this);
+        db.initializeDb();
+        employeeList = db.getAllRows();
+
         addEmployeePageButtonEventHandler();
+        fillListView();
     }
 
     public void addEmployeePageButtonEventHandler()
@@ -34,5 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void fillListView()
+    {
+        adapter = new EmployeeAdapter(this, employeeList);
+        lv_j_listOfEmployees.setAdapter(adapter);
     }
 }
