@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_j_addEmployee;
     ListView lv_j_listOfEmployees;
     ArrayList<Employee> employeeList;
+    Intent intent;
     EmployeeAdapter adapter;
     Database db;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         lv_j_listOfEmployees = findViewById(R.id.lv_v_listOfEmployees);
 
         employeeList = new ArrayList<Employee>();
+
+        intent = new Intent(MainActivity.this, AddEmployee.class);
 
         db = new Database(this);
         db.initializeDb();
@@ -42,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, AddEmployee.class);
                 startActivity(intent);
             }
         });

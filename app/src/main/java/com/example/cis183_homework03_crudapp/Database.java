@@ -107,4 +107,11 @@ public class Database extends SQLiteOpenHelper
         db.close();
         return listOfEmployees;
     }
+
+    public void addNewUser(Employee e)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES('" + e.getfName() + "', '" + e.getlName() + "', '" + e.getuName() + "', '" + e.getPassword() + "', '" + e.getEmail() + "', '" + e.getAge() + "')");
+    }
 }

@@ -1,6 +1,8 @@
 package com.example.cis183_homework03_crudapp;
 
-public class Employee
+import java.io.Serializable;
+
+public class Employee implements Serializable
 {
     private String fName;
     private String lName;

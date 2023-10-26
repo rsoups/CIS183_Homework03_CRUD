@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,9 @@ public class AddEmployee extends AppCompatActivity {
     EditText et_j_age;
     Button btn_j_ae_addEmployee;
     Button btn_j_ae_back;
-    ArrayList<Employee> employeeList;
+    Intent intent;
+    ArrayList<Employee> listOfEmployees;
+    Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,11 @@ public class AddEmployee extends AppCompatActivity {
         btn_j_ae_addEmployee = findViewById(R.id.btn_v_ae_addEmployee);
         btn_j_ae_back = findViewById(R.id.btn_v_ae_back);
 
-        employeeList = new ArrayList<Employee>();
+        listOfEmployees = new ArrayList<Employee>();
+
+        intent = new Intent(AddEmployee.this, MainActivity.class);
+
+        db = new Database(this);
 
         addEmployeeButtonHandler();
         backButtonHandler();
@@ -56,8 +63,11 @@ public class AddEmployee extends AppCompatActivity {
                 String a = et_j_age.getText().toString();
 
                 Employee employee = new Employee(f, l, u, p, e, a);
+                //add new employee to arraylist and database
+                listOfEmployees.add(employee);
+                db.addNewUser(employee);
 
-                employeeList.add(employee);
+                //displayEmployees();
 
                 et_j_fName.setText("");
                 et_j_lName.setText("");
@@ -69,10 +79,12 @@ public class AddEmployee extends AppCompatActivity {
         });
     }
 
-    public void addNewEmployee(Employee e)
+    public void displayEmployees()
     {
-        //add new employee to arraylist and database
-        //do i even need the array?...
+        for(int i = 0; i < listOfEmployees.size(); i++)
+        {
+            Log.d("User", listOfEmployees.get(i).getfName());
+        }
     }
 
     public void backButtonHandler()
@@ -80,7 +92,7 @@ public class AddEmployee extends AppCompatActivity {
         btn_j_ae_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddEmployee.this, MainActivity.class);
+
                 startActivity(intent);
             }
         });
