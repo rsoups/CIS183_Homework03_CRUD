@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Beige"
+    android:backgroundTint="@color/Beige"
+    tools:context=".Update">
+
+    <Button
+        android:id="@+id/btn_v_u_update"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/LightOrange"
+        android:text="Update"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="667dp" />
+
+    <Button
+        android:id="@+id/btn_v_u_back"
+        android:layout_width="167dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/LightOrange"
+        android:text="Back"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="666dp" />
+
+    <EditText
+        android:id="@+id/et_v_u_age"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <EditText
+        android:id="@+id/et_v_u_password"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <EditText
+        android:id="@+id/et_v_u_email"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <TextView
+        android:id="@+id/tv_v_u_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <EditText
+        android:id="@+id/et_v_u_lName"
+        android:layout_width="148dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=","
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="15dp" />
+
+    <EditText
+        android:id="@+id/et_v_u_fName"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -114,4 +114,22 @@ public class Database extends SQLiteOpenHelper
 
         db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES('" + e.getfName() + "', '" + e.getlName() + "', '" + e.getuName() + "', '" + e.getPassword() + "', '" + e.getEmail() + "', '" + e.getAge() + "')");
     }
+
+    public void deleteUser(String uName)
+    {
+        //connect to database
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //delete user from database
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE username = '" + uName + "';");
+    }
+
+    public void updateUser(Employee e)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String updateCommand = "UPDATE " + TABLE_NAME + " SET firstname = '" + e.getfName() + "', lastname = '" + e.getlName() + "', password = '" + e.getPassword() + "', email = '" + e.getEmail() + "', age = '" + e.getAge() + "' WHERE username = '" + e.getuName() + "';";
+        db.execSQL(updateCommand);
+        db.close();
+    }
 }

@@ -67,8 +67,6 @@ public class AddEmployee extends AppCompatActivity {
                 listOfEmployees.add(employee);
                 db.addNewUser(employee);
 
-                //displayEmployees();
-
                 et_j_fName.setText("");
                 et_j_lName.setText("");
                 et_j_uName.setText("");
@@ -77,14 +75,6 @@ public class AddEmployee extends AppCompatActivity {
                 et_j_age.setText("");
             }
         });
-    }
-
-    public void displayEmployees()
-    {
-        for(int i = 0; i < listOfEmployees.size(); i++)
-        {
-            Log.d("User", listOfEmployees.get(i).getfName());
-        }
     }
 
     public void backButtonHandler()
