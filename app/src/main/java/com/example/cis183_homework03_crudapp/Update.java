@@ -43,7 +43,7 @@ public class Update extends AppCompatActivity
         employeePassed = (Employee) cameFrom.getSerializableExtra("Employee");
 
         et_j_u_fName.setText(employeePassed.getfName());
-        et_j_u_lName.setText(employeePassed.getlName());
+        et_j_u_lName.setText(employeePassed.getlName() + ",");
         tv_j_u_username.setText(employeePassed.getuName());
         et_j_u_password.setText(employeePassed.getPassword());
         et_j_u_email.setText(employeePassed.getEmail());
