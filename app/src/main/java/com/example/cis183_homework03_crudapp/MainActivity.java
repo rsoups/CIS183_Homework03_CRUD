@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         addEmployeePageButtonEventHandler();
         fillListView();
-        displayEmployees();
+        //displayEmployees();
         deleteUserEvent();
         updateUserEvent();
     }

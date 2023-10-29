@@ -40,9 +40,9 @@ public class AddEmployee extends AppCompatActivity {
         btn_j_ae_back = findViewById(R.id.btn_v_ae_back);
 
         listOfEmployees = new ArrayList<Employee>();
-
+        //connection to main page
         intent = new Intent(AddEmployee.this, MainActivity.class);
-
+        //database connection
         db = new Database(this);
 
         addEmployeeButtonHandler();
@@ -54,7 +54,6 @@ public class AddEmployee extends AppCompatActivity {
         btn_j_ae_addEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String f = et_j_fName.getText().toString();
                 String l = et_j_lName.getText().toString();
                 String u = et_j_uName.getText().toString();
